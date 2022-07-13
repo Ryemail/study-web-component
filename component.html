@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<button onclick="toggleAvator()">更换头像</button>
+		<user-card
+			id="card"
+			avatar="/images/1.webp"
+			mobile="13125137937"
+			name="阮书垚"
+		></user-card>
+
+		<script src="./dist/tag.umd.js"></script>
+		<script>
+			function toggleAvator() {
+				const card = document.querySelector("#card");
+
+				const avatar = card.getAttribute("avatar");
+
+				let newAvator = "/images/1.webp";
+
+				if (avatar === "/images/1.webp") {
+					newAvator = "/images/2.webp";
+				}
+
+				card.setAttribute("avatar", newAvator);
+			}
+		</script>
+	</body>
+</html>
