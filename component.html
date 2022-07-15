@@ -18,19 +18,30 @@
 
 		<script src="./dist/tag.umd.js"></script>
 		<script>
-			function toggleAvator() {
-				const card = document.querySelector("#card");
+			let newAvator = "/images/1.webp";
 
-				const avatar = card.getAttribute("avatar");
+			const comments = [
+				{ name: "1", avatar: newAvator },
+				{ name: "2", avatar: newAvator },
+				{ name: "3", avatar: newAvator },
+				{ name: "4", avatar: newAvator },
+			];
 
-				let newAvator = "/images/1.webp";
+			const card = document.querySelector("#card");
 
-				if (avatar === "/images/1.webp") {
-					newAvator = "/images/2.webp";
-				}
+			card.comments = comments;
 
-				card.setAttribute("avatar", newAvator);
-			}
+			// function toggleAvator() {
+			// 	const avatar = card.getAttribute("avatar");
+
+			// 	if (avatar === "/images/1.webp") {
+			// 		newAvator = "/images/2.webp";
+			// 	}
+
+			// 	card.setAttribute("avatar", newAvator);
+
+			// 	card.comments = comments;
+			// }
 		</script>
 	</body>
 </html>

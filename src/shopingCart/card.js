@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit";
 
-export default class UsersCard extends LitElement {
+export default class Cart extends LitElement {
 	constructor() {
 		super();
 		this.avatar = "";

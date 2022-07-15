@@ -7,13 +7,29 @@
 		<title>Web-Compoent</title>
 	</head>
 	<body>
-		<script src="./dist/tag.umd.js"></script>
-
 		<user-card
 			id="card"
-			avatar="/images/1.webp"
+			avatar="https://joeschmoe.io/api/v1/random"
 			mobile="13125137937"
 			name="阮书垚"
 		></user-card>
+
+		<script type="module">
+			import "./src/mian.js";
+			const card = document.querySelector("#card");
+
+			card.comments = [
+				{
+					name: "1",
+					avatar: "https://joeschmoe.io/api/v1/random",
+					mobile: "13125137937",
+				},
+				{
+					name: "2",
+					avatar: "https://joeschmoe.io/api/v1/random",
+					mobile: "13125137938",
+				},
+			];
+		</script>
 	</body>
 </html>

@@ -13,11 +13,10 @@ const developmentPlugins = () => {
 		serve({
 			contentBase: "",
 			host: "localhost",
-			port: 3000,
+			port: 3001,
+			historyApiFallback: true,
 		}),
-		liverelorad({
-			watch: ["src"],
-		}),
+		liverelorad(),
 	];
 };
 
@@ -38,17 +37,17 @@ export default {
 		},
 	],
 	plugins: [
-		...developmentPlugins(),
+		commonjs(),
+		nodeResolve(),
 		terser({
 			compress: {
-				drop_console: true,
+				// drop_console: true,
 				ecma: 5,
 			},
 		}),
-		nodeResolve(),
-		commonjs(),
 		babel({
 			exclude: "node_modules/**",
 		}),
+		...developmentPlugins(),
 	],
 };
